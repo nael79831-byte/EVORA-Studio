@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mohamed Nael - Web Designer & Developer. تصميم وتطوير مواقع احترافية.">
+<title>ÉVORA Studio | Mohamed Nael</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf9f6;--surface:#fff;--text:#171717;--muted:#77736c;--gold:#b38a48;--line:#e9e5dc;--dark:#171715}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,91%);margin:auto}
+.gold{color:var(--gold)}
+.english{font-family:'Playfair Display',serif;letter-spacing:1px}
+header{position:fixed;top:0;width:100%;z-index:100;background:#faf9f6eF;backdrop-filter:blur(18px);border-bottom:1px solid #e9e5dc90}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 29px 'Playfair Display',serif;letter-spacing:2px}
+.logo small{display:block;font:11px 'Cairo';letter-spacing:5px;text-align:center;color:var(--gold);margin-top:-5px}
+.navlinks{display:flex;align-items:center;gap:25px;font-size:13px}
+.navlinks a{transition:.3s}
+.navlinks a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--text);border-radius:40px;padding:12px 23px;background:var(--text);color:white;transition:.3s;font-weight:700;font-size:13px}
+.btn:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-3px)}
+.btn.light{background:transparent;color:var(--text)}
+.btn.light:hover{color:white}
+.menu-btn{display:none;background:none;border:0;font-size:25px}
+.hero{min-height:740px;padding:155px 0 90px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:450px;height:450px;border-radius:50%;background:#c9a56a18;filter:blur(65px);top:90px;right:-170px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}
+.eyebrow{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:2px;margin-bottom:17px}
+.hero h1{font-size:clamp(38px,5.4vw,67px);line-height:1.35;font-weight:800;margin-bottom:20px}
+.hero p{color:var(--muted);font-size:16px;line-height:2.1;max-width:560px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-visual{height:430px;position:relative;display:grid;place-items:center}
+.visual-card{width:90%;height:350px;background:linear-gradient(140deg,#24231f,#090909);border-radius:25px;box-shadow:0 30px 70px #0002;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;transform:rotate(-3deg);position:relative;overflow:hidden}
+.visual-card:before{content:"";position:absolute;width:300px;height:300px;border:1px solid #c7a66a55;border-radius:50%;box-shadow:0 0 0 35px #c7a66a09,0 0 0 70px #c7a66a08}
+.visual-card strong{font:700 53px 'Playfair Display';letter-spacing:4px;color:#d5b779;z-index:1}
+.visual-card span{letter-spacing:7px;font-size:12px;margin-top:8px;z-index:1}
+.float-tag{position:absolute;background:white;padding:14px 19px;border-radius:13px;box-shadow:0 12px 35px #0001;font-size:12px;font-weight:700;animation:float 4s ease-in-out infinite}
+.tag-one{top:30px;right:0}.tag-two{bottom:20px;left:0;animation-delay:1s}
+@keyframes float{50%{transform:translateY(-13px)}}
+section{padding:95px 0;scroll-margin-top:75px}
+.section-head{text-align:center;margin-bottom:45px}
+.section-head small{color:var(--gold);font-weight:700;letter-spacing:2px}
+.section-head h2{font-size:34px;margin:8px 0}
+.section-head p{color:var(--muted);font-size:14px}
+.services{background:#fff}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:27px;border:1px solid var(--line);border-radius:17px;background:#fff;transition:.35s}
+.card:hover{transform:translateY(-7px);box-shadow:0 18px 45px #0000000c;border-color:#d1b77f}
+.card-icon{font-size:27px;color:var(--gold);margin-bottom:14px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{font-size:13px;color:var(--muted);line-height:1.9}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:23px}
+.project{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.35s}
+.project:hover{transform:translateY(-6px);box-shadow:0 20px 40px #00000012}
+.project img{width:100%;height:210px;object-fit:cover;display:block;background:#eee}
+.project-info{padding:19px}
+.project-info small{color:var(--gold);font-size:11px}
+.project-info h3{font-size:17px;margin:5px 0}
+.project-info p{font-size:12px;color:var(--muted);line-height:1.8}
+.project-note{font-size:12px;color:var(--gold);margin-top:12px}
+.about{background:#f0ede6}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-art{min-height:330px;background:var(--dark);border-radius:20px;display:grid;place-items:center;color:#d4b476}
+.about-art strong{font:700 80px 'Playfair Display';letter-spacing:7px}
+.about-copy p{color:var(--muted);line-height:2.1;font-size:14px;margin:16px 0}
+.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.skill{border:1px solid #d8c9a9;border-radius:30px;padding:8px 15px;font-size:12px;background:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}
+.stat{border-right:2px solid var(--gold);padding-right:13px}
+.stat strong{font-size:23px;display:block}
+.stat span{font-size:11px;color:var(--muted)}
+.contact{background:#171715;color:white}
+.contact .section-head p{color:#aaa}
+.contact-box{max-width:700px;margin:auto;text-align:center}
+.contact-box p{color:#bbb;line-height:2;margin:15px 0 25px}
+.request-intro{background:linear-gradient(135deg,#f4efe4,#fff);border:1px solid #e8dfce;padding:30px;border-radius:20px;text-align:center}
+.request-intro h3{font-size:23px}
+.request-intro p{color:var(--muted);font-size:13px;margin:8px 0 20px}
+.form-panel{display:none;max-width:800px;margin:25px auto 0;background:white;border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 20px 60px #0000000a;animation:enter .6s ease}
+.form-panel.show{display:block}
+@keyframes enter{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.progress{height:5px;background:#eee;border-radius:20px;margin:15px 0 25px;overflow:hidden}
+.progress span{display:block;height:100%;background:var(--gold);width:0;transition:.4s}
+.step{display:none;animation:enter .35s}
+.step.active{display:block}
+.step h3{font-size:20px;margin-bottom:7px}
+.step>p{font-size:12px;color:var(--muted);margin-bottom:20px}
+.field{margin:15px 0}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}
+.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:13px;background:#fff;outline:none}
+.field input:focus,.field textarea:focus{border-color:var(--gold)}
+.options{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.option{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:right;background:#fff;transition:.2s;font-size:13px}
+.option.selected{border:2px solid var(--gold);background:#fbf7ef}
+.style-options{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.style-option{border:1px solid var(--line);border-radius:13px;overflow:hidden;text-align:right;background:white;cursor:pointer;transition:.25s}
+.style-option.selected{border:2px solid var(--gold);box-shadow:0 0 0 2px #b38a4820}
+.style-option img{width:100%;height:105px;object-fit:cover;display:block}
+.style-option div{padding:10px}
+.style-option b{font-size:13px}
+.style-option small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.color-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.color-option{border:1px solid var(--line);border-radius:11px;padding:12px;display:flex;align-items:center;gap:10px;font-size:12px;cursor:pointer}
+.color-option.selected{border:2px solid var(--gold)}
+.swatches{display:flex}
+.swatches i{width:17px;height:17px;border-radius:50%;border:1px solid #ddd;margin-left:-4px}
+.form-actions{display:flex;justify-content:space-between;gap:10px;margin-top:25px}
+.form-actions button{min-width:110px}
+.form-hint{font-size:11px;color:var(--muted);margin-top:12px}
+footer{background:#10100f;color:#ddd;padding:35px 0}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer p{font-size:12px;color:#999}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){
+ .navlinks{display:none;position:absolute;top:78px;right:0;width:100%;background:white;padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
+ .navlinks.open{display:flex}.menu-btn{display:block}.nav>.btn{display:none}
+ .hero{padding-top:125px;min-height:auto}.hero-grid,.about-grid{grid-template-columns:1fr;gap:25px}
+ .hero-visual{height:320px}.visual-card{height:260px}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .projects-grid{grid-template-columns:repeat(2,1fr)}
+ section{padding:70px 0}
+}
+@media(max-width:520px){
+ .cards,.projects-grid{grid-template-columns:1fr}
+ .hero h1{font-size:39px}.hero p{font-size:14px}
+ .style-options,.options,.color-options{grid-template-columns:1fr 1fr}
+ .form-panel{padding:18px}.stats{gap:7px}
+ .stat strong{font-size:19px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="container nav">
+  <a href="#home" class="logo">ÉVORA<small>STUDIO</small></a>
+  <nav class="navlinks" id="navlinks">
+   <a href="#home">الرئيسية</a><a href="#services">خدماتي</a><a href="#work">أعمالي</a><a href="#about">من أنا</a><a href="#request">طلب تصميم</a><a href="#contact">تواصل</a>
+  </nav>
+  <a class="btn" href="#request">ابدأ مشروعك</a>
+  <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="reveal">
+   <div class="eyebrow english">ÉVORA STUDIO — DIGITAL EXPERIENCES</div>
+   <h1>نصنع حضورك الرقمي <span class="gold">بأسلوب مختلف.</span></h1>
+   <p>أنا محمد نائل، مصمم ومطور مواقع. أعمل على تحويل الأفكار إلى مواقع عصرية تجمع بين جمال التصميم وسهولة الاستخدام، لتمنح مشروعك حضوراً احترافياً على الإنترنت.</p>
+   <div class="hero-actions"><a class="btn" href="#work">اكتشف أعمالي ↙</a><a class="btn light" href="#request">اطلب موقعك الآن</a></div>
+  </div>
+  <div class="hero-visual reveal">
+   <div class="visual-card"><strong>ÉVORA</strong><span>DESIGN STUDIO</span></div>
+   <div class="float-tag tag-one">✦ تصميم إبداعي</div>
+   <div class="float-tag tag-two">⌘ تطوير مواقع عصرية</div>
+  </div>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="container">
+  <div class="section-head reveal"><small>WHAT I DO</small><h2>خدماتي</h2><p>حلول رقمية مصممة لتناسب احتياجات مشروعك.</p></div>
+  <div class="cards">
+   <article class="card reveal"><div class="card-icon">✧</div><h3>تصميم مواقع احترافية</h3><p>واجهات أنيقة ومنظمة تعكس هوية مشروعك وتقدم تجربة استخدام مريحة.</p></article>
+   <article class="card reveal"><div class="card-icon">⌘</div><h3>تطوير المواقع</h3><p>تحويل التصميم إلى صفحات ويب تفاعلية باستخدام تقنيات الويب الأساسية.</p></article>
+   <article class="card reveal"><div class="card-icon">▣</div><h3>المتاجر الإلكترونية</h3><p>تصميم واجهات متاجر لعرض المنتجات وتنظيم تجربة التسوق.</p></article>
+   <article class="card reveal"><div class="card-icon">◫</div><h3>تصميم متجاوب</h3><p>مواقع تتكيف مع أحجام شاشات الهواتف والأجهزة اللوحية والكمبيوتر.</p></article>
+   <article class="card reveal"><div class="card-icon">◎</div><h3>تجربة المستخدم</h3><p>تنظيم المحتوى والأزرار والتنقل لتكون رحلة الزائر واضحة وسهلة.</p></article>
+   <article class="card reveal"><div class="card-icon">✦</div><h3>تطوير وتحسين</h3><p>إضافة مميزات جديدة وتحسين شكل وأداء المواقع الموجودة.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="work">
+ <div class="container">
+  <div class="section-head reveal"><small>SELECTED CONCEPTS</small><h2>نماذج من أعمالي</h2><p>ستة تصورات لمشاريع متنوعة توضح أساليب التصميم المختلفة.</p></div>
+  <div class="projects-grid">
+   <article class="project reveal"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700" alt="تصميم متجر أزياء"><div class="project-info"><small>ECOMMERCE</small><h3>ÉVORA Fashion</h3><p>تصور متجر أزياء بواجهة راقية وعرض واضح للمنتجات.</p><div class="project-note">مشروع تجريبي من تصميمي</div></div></article>
+   <article class="project reveal"><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=700" alt="تصميم كافيه"><div class="project-info"><small>RESTAURANT</small><h3>Maison Café</h3><p>موقع تعريفي لمقهى يعرض القائمة والأجواء والخدمات.</p><div class="project-note">مشروع تجريبي من تصميمي</div></div></article>
+   <article class="project reveal"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700" alt="موقع شركة تقنية"><div class="project-info"><small>TECHNOLOGY</small><h3>NOVA Tech</h3><p>واجهة شركة تقنية تعرض الحلول والخدمات الرقمية.</p><div class="project-note">مشروع تجريبي من تصميمي</div></div></article>
+   <article class="project reveal"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700" alt="موقع عقارات"><div class="project-info"><small>REAL ESTATE</small><h3>VISTA Estates</h3><p>تصور منصة عقارية لعرض العقارات بطريقة منظمة.</p><div class="project-note">مشروع تجريبي من تصميمي</div></div></article>
+   <article class="project reveal"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700" alt="موقع رياضي"><div class="project-info"><small>FITNESS</small><h3>FITZONE</h3><p>موقع لنادٍ رياضي يعرض الخدمات والبرامج التدريبية.</p><div class="project-note">مشروع تجريبي من تصميمي</div></div></article>
+   <article class="project reveal"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700" alt="منصة تعليمية"><div class="project-info"><small>EDUCATION</small><h3>Learnify</h3><p>واجهة منصة تعليمية لتنظيم الدورات والمحتوى الدراسي.</p><div class="project-note">مشروع تجريبي من تصميمي</div></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="container about-grid">
+  <div class="about-art reveal"><strong>MN</strong></div>
+  <div class="about-copy reveal">
+   <div class="eyebrow">ABOUT ME</div><h2>أهلاً، أنا محمد نائل.</h2>
+   <p>مصمم ومطور مواقع مهتم ببناء تجارب رقمية تجمع بين البساطة والأناقة والوظائف العملية. أركز على التعلم المستمر وتطوير مهاراتي، وأسعى إلى تقديم حلول ويب واضحة وعصرية تناسب احتياجات كل مشروع.</p>
+   <p>أستخدم تقنيات الويب الحديثة وأدوات التصميم والذكاء الاصطناعي للمساعدة في التخطيط والتنفيذ وتحسين تجربة المستخدم.</p>
+   <div class="skills"><span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">JavaScript</span><span class="skill">Responsive Design</span><span class="skill">UI / UX</span><span class="skill">AI Tools</span></div>
+   <div class="stats"><div class="stat"><strong>6</strong><span>نماذج مشاريع تجريبية</span></div><div class="stat"><strong>3</strong><span>تقنيات ويب أساسية</span></div><div class="stat"><strong>∞</strong><span>شغف بالتعلم والتطوير</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="request">
+ <div class="container">
+  <div class="section-head reveal"><small>START A PROJECT</small><h2>لنبدأ مشروعك معاً</h2><p>اختر ما يناسبك، وسأتعرف على فكرتك بشكل أفضل.</p></div>
+  <div class="request-intro reveal" id="requestIntro">
+   <h3>لديك فكرة لموقع جديد؟</h3>
+   <p>أجب عن مجموعة أسئلة قصيرة، وستصلني تفاصيل طلبك مباشرة عبر واتساب.</p>
+   <button class="btn" id="startForm">ابدأ طلبك الآن ←</button>
+  </div>
+  <div class="form-panel" id="formPanel">
+   <div style="display:flex;justify-content:space-between;align-items:center"><b>PROJECT BRIEF</b><span class="gold" id="stepCounter">1 / 8</span></div>
+   <div class="progress"><span id="progressBar"></span></div>
+   <form id="projectForm">
+    <div class="step active" data-step="1"><h3>ما اسم حضرتك؟</h3><p>اكتب الاسم الذي نتواصل معك به.</p><div class="field"><input id="clientName" required placeholder="اسمك"></div></div>
+    <div class="step" data-step="2"><h3>ما اسم البراند أو المشروع؟</h3><p>اكتب اسم النشاط الذي تريد تصميم الموقع له.</p><div class="field"><input id="brandName" required placeholder="اسم البراند"></div></div>
+    <div class="step" data-step="3"><h3>ما نوع الموقع الذي تحتاجه؟</h3><p>اختر نوعاً واحداً.</p><div class="options single">
+     <button type="button" class="option">موقع شركة</button><button type="button" class="option">متجر إلكتروني</button><button type="button" class="option">موقع شخصي</button><button type="button" class="option">صفحة هبوط إعلانية</button><button type="button" class="option">موقع تعريفي</button>
+    </div></div>
+    <div class="step" data-step="4"><h3>ما مجال البراند؟</h3><p>اختر المجال الأقرب لنشاطك.</p><div class="options single">
+     <button type="button" class="option">ملابس وموضة</button><button type="button" class="option">مطاعم وكافيهات</button><button type="button" class="option">تكنولوجيا</button><button type="button" class="option">تعليم وتدريب</button><button type="button" class="option">خدمات وأعمال</button><button type="button" class="option">مجال آخر</button>
+    </div></div>
+    <div class="step" data-step="5"><h3>ما الطابع الذي تفضله لموقعك؟</h3><p>شاهد الصور واختر التصميم الأقرب لذوقك.</p><div class="style-options single">
+     <button type="button" class="style-option"><img src="https://images.unsplash.com/photo-1516542076529-1ea3854896f2?w=400" alt=""><div><b>Luxury — فخم</b><small>تفاصيل راقية ولمسات ذهبية.</small></div></button>
+     <button type="button" class="style-option"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400" alt=""><div><b>Minimal — بسيط</b><small>مساحات هادئة وترتيب واضح.</small></div></button>
+     <button type="button" class="style-option"><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=400" alt=""><div><b>Calm — هادئ</b><small>ألوان ناعمة ومريحة للعين.</small></div></button>
+     <button type="button" class="style-option"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400" alt=""><div><b>Modern — عصري</b><small>أشكال حديثة وتنسيقات مبتكرة.</small></div></button>
+     <button type="button" class="style-option"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400" alt=""><div><b>Elegant — راقٍ</b><small>خطوط أنيقة وتفاصيل متناسقة.</small></div></button>
+     <button type="button" class="style-option"><img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=400" alt=""><div><b>Bold — جريء</b><small>ألوان قوية وشخصية واضحة.</small></div></button>
+    </div></div>
+    <div class="step" data-step="6"><h3>ما الألوان التي تفضلها؟</h3><p>اختر مجموعة الألوان المناسبة.</p><div class="color-options single">
+     <button type="button" class="color-option"><span class="swatches"><i style="background:white"></i><i style="background:#171717"></i></span> أبيض وأسود</button>
+     <button type="button" class="color-option"><span class="swatches"><i style="background:#171717"></i><i style="background:#b38a48"></i></span> أسود وذهبي</button>
+     <button type="button" class="color-option"><span class="swatches"><i style="background:white"></i><i style="background:#c5a66d"></i></span> أبيض وذهبي</button>
+     <button type="button" class="color-option"><span class="swatches"><i style="background:#e8dfd0"></i><i style="background:#b9c4b5"></i></span> ألوان هادئة</button>
+     <button type="button" class="color-option"><span class="swatches"><i style="background:#dc5945"></i><i style="background:#315c9a"></i></span> ألوان جريئة</button>
+     <button type="button" class="color-option">اختار أنت الألوان المناسبة</button>
+    </div></div>
+    <div class="step" data-step="7"><h3>ما المميزات التي تحتاجها؟</h3><p>يمكنك اختيار أكثر من ميزة.</p><div class="options multi">
+     <button type="button" class="option">متجر وسلة مشتريات</button><button type="button" class="option">الدفع الإلكتروني</button><button type="button" class="option">التواصل عبر واتساب</button><button type="button" class="option">حجز المواعيد</button><button type="button" class="option">حسابات للعملاء</button><button type="button" class="option">معرض صور ومشاريع</button><button type="button" class="option">عربي وإنجليزي</button><button type="button" class="option">لوحة تحكم</button>
+    </div></div>
+    <div class="step" data-step="8"><h3>هل لديك تفاصيل إضافية؟</h3><p>هذا الجزء اختياري، اكتب أي فكرة تحب إضافتها.</p><div class="field"><textarea id="extraDetails" rows="5" placeholder="أي تفاصيل أو أفكار إضافية..."></textarea></div><p class="form-hint">بالضغط على إرسال سيتم فتح واتساب برسالة جاهزة. أنت من يضغط إرسال داخل واتساب.</p></div>
+    <div class="form-actions"><button type="button" class="btn light" id="prevBtn" style="visibility:hidden">السابق</button><button type="button" class="btn" id="nextBtn">التالي ←</button></div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container contact-box">
+  <div class="section-head"><small>GET IN TOUCH</small><h2>لديك مشروع في ذهنك؟</h2><p>دعنا نحول فكرتك إلى تجربة رقمية مميزة.</p></div>
+  <a class="btn" href="https://wa.me/201015291878" target="_blank">تواصل معي عبر واتساب ↗</a>
+ </div>
+</section>
+</main>
+
+<footer><div class="container footer-row"><a href="#home" class="logo">ÉVORA<small>STUDIO</small></a><p>© 2026 ÉVORA Studio — Mohamed Nael</p><p>Designed with purpose & creativity.</p></div></footer>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navlinks=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>navlinks.classList.toggle('open'));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+
+const revealObserver=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+let currentStep=1;
+const totalSteps=8;
+const panel=document.getElementById('formPanel');
+const intro=document.getElementById('requestIntro');
+const steps=[...document.querySelectorAll('.step')];
+const nextBtn=document.getElementById('nextBtn');
+const prevBtn=document.getElementById('prevBtn');
+const progressBar=document.getElementById('progressBar');
+
+document.getElementById('startForm').addEventListener('click',()=>{
+ intro.style.display='none';
+ panel.classList.add('show');
+ panel.scrollIntoView({behavior:'smooth',block:'start'});
+ updateStep();
+});
+function updateStep(){
+ steps.forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===currentStep));
+ document.getElementById('stepCounter').textContent=currentStep+' / '+totalSteps;
+ progressBar.style.width=(currentStep/totalSteps*100)+'%';
+ prevBtn.style.visibility=currentStep===1?'hidden':'visible';
+ nextBtn.textContent=currentStep===totalSteps?'إرسال عبر واتساب ↗':'التالي ←';
+}
+document.querySelectorAll('.single').forEach(group=>{
+ group.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+  group.querySelectorAll('button').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+ }));
+});
+document.querySelectorAll('.multi .option').forEach(btn=>btn.addEventListener('click',()=>btn.classList.toggle('selected')));
+
+function selectedText(step){
+ const selected=document.querySelector('.step[data-step="'+step+'"] .selected');
+ return selected?selected.innerText.replace(/\s+/g,' ').trim():'';
+}
+function validateStep(){
+ if(currentStep===1&&!document.getElementById('clientName').value.trim()){alert('من فضلك اكتب اسمك.');return false}
+ if(currentStep===2&&!document.getElementById('brandName').value.trim()){alert('من فضلك اكتب اسم البراند.');return false}
+ if(currentStep>=3&&currentStep<=6&&!selectedText(currentStep)){alert('من فضلك اختر إجابة للمتابعة.');return false}
+ if(currentStep===7&&!document.querySelector('.multi .selected')){alert('اختر ميزة واحدة على الأقل.');return false}
+ return true;
+}
+prevBtn.addEventListener('click',()=>{if(currentStep>1){currentStep--;updateStep()}});
+nextBtn.addEventListener('click',()=>{
+ if(!validateStep())return;
+ if(currentStep<totalSteps){currentStep++;updateStep();panel.scrollIntoView({behavior:'smooth',block:'start'});return}
+ sendWhatsApp();
+});
+function sendWhatsApp(){
+ const features=[...document.querySelectorAll('.multi .selected')].map(b=>b.innerText.trim());
+ const message=
+`طلب تصميم موقع جديد — ÉVORA Studio
+
+اسم العميل: ${document.getElementById('clientName').value.trim()}
+اسم البراند: ${document.getElementById('brandName').value.trim()}
+نوع الموقع: ${selectedText(3)}
+مجال البراند: ${selectedText(4)}
+الطابع التصميمي: ${selectedText(5)}
+الألوان: ${selectedText(6)}
+المميزات المطلوبة: ${features.join('، ')}
+تفاصيل إضافية: ${document.getElementById('extraDetails').value.trim()||'لا توجد'}
+
+تم إرسال الطلب من موقع ÉVORA Studio.`;
+ window.open('https://wa.me/201015291878?text='+encodeURIComponent(message),'_blank');
+}
+</script>
+</body>
+</html>
